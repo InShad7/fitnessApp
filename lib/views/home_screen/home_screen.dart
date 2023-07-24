@@ -11,6 +11,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Provider.of<FitnessProvier>(context, listen: false).updateFitness();
+    });
     getName();
     Provider.of<FitnessProvier>(context, listen: false).getData();
     return Scaffold(
