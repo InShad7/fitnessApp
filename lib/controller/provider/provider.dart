@@ -114,7 +114,7 @@ class FitnessProvier extends ChangeNotifier {
       where: 'date = ?',
       whereArgs: [formattedDate.toString()],
     );
-
+//update existing data=====================================================
     if (data.isNotEmpty) {
       FitnessModel fitnessModel = FitnessModel(
         id: data[0]['id'],
@@ -142,7 +142,7 @@ class FitnessProvier extends ChangeNotifier {
       int newId = lastUsedId + 1;
       lastUsedId = newId;
 
-//update model =======================
+//create new data with new date =======================
       FitnessModel fitnessModel = FitnessModel(
         id: newId,
         date: formattedDate.toString(),
